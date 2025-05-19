@@ -1,0 +1,52 @@
+dataset:
+  name: imagenet-c
+  config:
+    corruption: defocus_blur
+    severity: 5
+
+clip:
+  model:
+    arch: ViT-B-16
+    weight: laion2B-s34B-b88K
+  prompt:
+    template: a photo of a {}
+    use_ensemble: null
+  ema:
+    momentum: 1.0e-3
+  lora:
+    rank: 16
+    lora_alpha: 2
+
+optimizer:
+  name: AdamW
+  param_config:
+    bias: none
+  config:
+    lr: 1.0e-3
+    weight_decay: 0.01
+
+tta:
+  method: uninfo
+  config:
+    tau_s: &tau 0.01
+    tau_t: *tau
+    lam_unif: 1.0
+    info_weight_th: 3.0
+    ema_reg_lam: 1.0
+    ent_config:
+      weight: false
+      hard_thresholding: false
+      eps: 0.4
+    unif_loss_config: &unif_loss_config
+      var: 1.0
+
+evaluator:
+  tau: *tau
+  unif_loss_config: *unif_loss_config
+
+adapt_dataloader:
+  batch_size: 64
+  shuffle: true
+
+val_dataloader:
+  batch_size: 128
