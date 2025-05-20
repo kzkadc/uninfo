@@ -2,7 +2,7 @@
 The official code for "Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption."  
 [[arXiv](https://arxiv.org/abs/2505.12912)]
 
-<details><summary>Abstract</summary>
+<details><summary><strong>Abstract</strong></summary>
 Pre-trained vision-language models such as contrastive language-image pre-training (CLIP) have demonstrated a remarkable generalizability, which has enabled a wide range of applications represented by zero-shot classification.
 However, vision-language models still suffer when they face datasets with large gaps from training ones, i.e., distribution shifts.
 We found that CLIP is especially vulnerable to sensor degradation, a type of realistic distribution shift caused by sensor conditions such as weather, light, or noise.
