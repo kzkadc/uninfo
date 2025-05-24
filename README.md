@@ -23,7 +23,7 @@ Through experiments, we demonstrate that our UnInfo improves accuracy under sens
 ![Overview](overview.png)
 
 ## Environment
-- Prepare the datasets (ImageNet-C, ImageNet-C-bar) and write their path in `dataset/dataset_config.py`.
+- Prepare the datasets (ImageNet-C, ImageNet-C-bar) and write their paths in `dataset/dataset_config.py`.
 - Install dependencies or build the docker image according to `docker/Dockerfile`.
 
 ```bash
@@ -34,6 +34,9 @@ $ docker build -t tta_uninfo docker --no-cache
 ## TTA
 ```bash
 $ python3 main.py -c imagenet-c.yaml -o result
+
+# running with the docker image
+$ docker run -it --rm -v $(pwd):$(pwd) -w $(pwd) --gpus device=0 tta_unifo python3 main.py -c imagenet-c.yaml -o result
 ```
 
 
