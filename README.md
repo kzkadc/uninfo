@@ -1,23 +1,9 @@
-# Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption
+# Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption (TMLR)
 The official code for "Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption."  
-[[arXiv](https://arxiv.org/abs/2505.12912)]
+[[Paper](https://openreview.net/forum?id=YELPe35KIg)] [[arXiv](https://arxiv.org/abs/2505.12912)]
 
 <details><summary><strong>Abstract</strong></summary>
-Pre-trained vision-language models such as contrastive language-image pre-training (CLIP) have demonstrated a remarkable generalizability, which has enabled a wide range of applications represented by zero-shot classification.
-However, vision-language models still suffer when they face datasets with large gaps from training ones, i.e., distribution shifts.
-We found that CLIP is especially vulnerable to sensor degradation, a type of realistic distribution shift caused by sensor conditions such as weather, light, or noise.
-Collecting a new dataset from a test distribution for fine-tuning highly costs since sensor degradation occurs unexpectedly and has a range of variety.
-Thus, we investigate test-time adaptation (TTA) of zero-shot classification, which enables on-the-fly adaptation to the test distribution with unlabeled test data.
-Existing TTA methods for CLIP mainly focus on modifying image and text embeddings or predictions to address distribution shifts.
-Although these methods can adapt to domain shifts, such as fine-grained labels spaces or different renditions in input images, they fail to adapt to distribution shifts caused by sensor degradation.
-We found that this is because image embeddings are "corrupted" in terms of <em>uniformity</em>, a measure related to the amount of information.
-To make models robust to sensor degradation, we propose a novel method called <strong>un</strong>iformity-aware <strong>info</strong>rmation-balanced TTA (UnInfo).
-To address the corruption of image embeddings, we introduce uniformity-aware confidence maximization, information-aware loss balancing, and knowledge distillation from the exponential moving average (EMA) teacher.
-The uniformity-aware confidence maximization induces image embeddings to uniformly distribute on the unit hypersphere to retain input information along with confidence maximization of predictions.
-The loss balancing adaptively assigns weights to the losses of uniformity and confidence on the basis of the current classification performance.
-The knowledge distillation from 
-the EMA teacher stabilizes adaptation and avoids catastrophic forgetting.
-Through experiments, we demonstrate that our UnInfo improves accuracy under sensor degradation by retaining information in terms of uniformity.
+Pre-trained vision-language models, such as contrastive language-image pre-training (CLIP), have demonstrated a remarkable generalizability, enabling a wide range of applications, including zero-shot classification. However, vision-language models still struggle to handle distribution shifts, where input samples have large gaps from training ones. We found that CLIP is especially vulnerable to image corruption, a type of realistic distribution shift caused by sensor conditions such as weather, light, or noise. Collecting a new dataset from a test distribution for fine-tuning is highly costly since image corruption occurs unexpectedly and has a wide variety of types. Thus, we investigate test-time adaptation (TTA) of zero-shot classification, which enables on-the-fly adaptation to the test distribution with unlabeled test data. Existing TTA methods for CLIP mainly focus on modifying image and text embeddings or predictions to address distribution shifts. Although these methods can adapt to domain shifts, such as out-of-distribution or different renditions in input images, they fail to adapt to distribution shifts beyond domain shifts, e.g., image corruption. We found that uniformity of image embeddings, which is related to the amount of information, is a key factor that differentiates domain shifts and other distribution shifts. To enable adaptation to image corruption, we propose a novel method called uniformity-aware information-balanced TTA (UnInfo). To address distribution shifts, we introduce uniformity-aware confidence maximization, information-aware loss balancing, and knowledge distillation from the exponential moving average (EMA) teacher. Through experiments, we demonstrate that our UnInfo improves accuracy under image corruption by retaining information in terms of uniformity.
 </details>
 
 ![Overview](overview.png)
@@ -44,10 +30,12 @@ $ docker run -it --rm -v $(pwd):$(pwd) -w $(pwd) --gpus device=0 tta_unifo pytho
 If our work assists your research, please cite our paper:
 
 ```
-@article{adachi2025uninfo,
-title={Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption},
-author={Kazuki Adachi and Shin'ya Yamaguchi and Tomoki Hamagami},
-journal={arXiv preprint arXiv:2505.12912},
-year={2025}
+@article{adachi2026uniformity,
+  title={Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption},
+  author={Kazuki Adachi and {Shin'ya} Yamaguchi and Tomoki Hamagami},
+  journal={Transactions on Machine Learning Research},
+  issn={2835-8856},
+  year={2026},
+  url={https://openreview.net/forum?id=YELPe35KIg}
 }
 ```
