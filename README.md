@@ -33,7 +33,7 @@ If our work assists your research, please cite our paper:
 @article{adachi2026uniformity,
   title={Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption},
   author={Kazuki Adachi and {Shin'ya} Yamaguchi and Tomoki Hamagami},
-  journal={Transactions on Machine Learning Research},
+  journal={Transactions on Machine Learning Research (TMLR)},
   issn={2835-8856},
   year={2026},
   url={https://openreview.net/forum?id=YELPe35KIg}
