@@ -1,5 +1,5 @@
 # Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption (TMLR)
-The official code for "Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption."  
+The official code for "Uniformity First: Uniformity-aware Test-time Adaptation of Vision-language Models against Image Corruption," accepted by TMLR in 2026.  
 [[Paper](https://openreview.net/forum?id=YELPe35KIg)] [[arXiv](https://arxiv.org/abs/2505.12912)]
 
 <details><summary><strong>Abstract</strong></summary>
